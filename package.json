@@ -5,7 +5,7 @@
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "scripts": {
-        "nearley": "nearleyc grammar.ne -o lib/rules.js",
+        "nearley": "mkdir -p lib && nearleyc grammar.ne -o lib/rules.js",
         "tsc": "tsc",
         "watch": "tsc -w",
         "prettier": "prettier --write src/*.ts src/**/*.ts *.json",
