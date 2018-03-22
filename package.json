@@ -10,7 +10,7 @@
         "watch": "tsc -w",
         "prettier": "prettier --write src/*.ts src/**/*.ts *.json",
         "prepublishOnly": "rm -f *~ && npm run nearley && tsc",
-        "test": "nyc mocha -r ts-node/register src/**/test/*.ts",
+        "test": "tsc && nyc mocha -r ts-node/register src/**/test/*.ts",
         "coveralls": "nyc report --reporter=text-lconv | coveralls"
     },
     "author": "Calculemus LLC",

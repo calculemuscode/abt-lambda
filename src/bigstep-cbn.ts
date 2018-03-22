@@ -1,6 +1,5 @@
 import { ABT, abt } from "@calculemus/abt";
 import { Set } from "immutable";
-import { toString } from "./stringify";
 
 export function weakheadnormalize(gas: number, fv: Set<string>, e: ABT): [number, ABT] {
     if (gas === 0) throw new Error("Out of gas");

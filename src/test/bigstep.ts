@@ -26,17 +26,17 @@ function expectEval(s: string) {
 
 describe("Big step evaluation", () => {
     it("Should correctly evaluate expressions returning constants", () => {
-        expectEval("(x => x) y").to.be.aequiv("y");
-        expectEval("(x => x) y").to.not.be.aequiv("z");
-        expectEval("(x => x) y").to.not.be.aequiv("y y");
-        expectEval("(x => y) x").to.be.aequiv("y");
-        expectEval("(x => x => x) y z").to.be.aequiv("z");
-        expectEval("(x => (y => y) x) w").to.be.aequiv("w");
+        expectEval("(x => x) y").to.be["aequiv"]("y");
+        expectEval("(x => x) y").to.not.be["aequiv"]("z");
+        expectEval("(x => x) y").to.not.be["aequiv"]("y y");
+        expectEval("(x => y) x").to.be["aequiv"]("y");
+        expectEval("(x => x => x) y z").to.be["aequiv"]("z");
+        expectEval("(x => (y => y) x) w").to.be["aequiv"]("w");
     });
 
     it("Should evaluate under binders", () => {
-        expectEval("x => (y => y) x").to.be.aequiv("z => z");
-        expectEval("(z => x ((y => y) z) z) z").to.be.aequiv("x z z");
+        expectEval("x => (y => y) x").to.be["aequiv"]("z => z");
+        expectEval("(z => x ((y => y) z) z) z").to.be["aequiv"]("x z z");
     });
 
     it("Should fail on an exception for nonterminating expressions", () => {
