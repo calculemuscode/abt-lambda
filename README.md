@@ -1,6 +1,7 @@
 Lambda calculus
 ===============
 
+[![npm version](https://badge.fury.io/js/%40calculemus%2Fabt-lambda.svg)](https://badge.fury.io/js/%40calculemus%2Fabt-lambda)
 [![Build Status](https://travis-ci.org/calculemuscode/abt-lambda.svg?branch=master)](https://travis-ci.org/calculemuscode/abt-lambda)
 [![Dependency Status](https://david-dm.org/calculemuscode/abt-lambda.svg)](https://david-dm.org/calculemuscode/abt-lambda)
 [![Dev Dependency Status](https://david-dm.org/calculemuscode/abt-lambda/dev-status.svg)](https://david-dm.org/calculemuscode/abt-lambda?type=dev)
