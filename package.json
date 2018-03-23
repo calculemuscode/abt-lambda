@@ -39,7 +39,7 @@
     },
     "nyc": {
         "include": ["src/**/*.ts"],
-        "exclude": ["src/**/test/*.ts"],
+        "exclude": ["src/**/*.d.ts", "src/**/test/**/*.ts"],
         "extension": [".ts"],
         "require": ["ts-node/register"],
         "sourcemap": true,
