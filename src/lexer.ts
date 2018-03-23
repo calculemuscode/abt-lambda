@@ -1,7 +1,7 @@
 import { compile, Lexer } from "moo";
 
 export const lexer: Lexer = compile({
-    space: { match: /[ \t\n]+/, lineBreaks: true },
+    space: { match: /[ \t\n`]+/, lineBreaks: true },
     ident: {
         match: /[a-zA-Z0-9_]+/,
         keywords: {
