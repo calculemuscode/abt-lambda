@@ -12,6 +12,10 @@ describe("Parsing", () => {
         expect(() => parse("a =>")).to.throw();
         expect(() => parse("=> a")).to.throw();
     });
+
+    it("Accepts padding spaces", () => {
+        expectParseToString("  x => x   ").to.equal("x => x");
+    });
 });
 
 describe("The toString function", () => {

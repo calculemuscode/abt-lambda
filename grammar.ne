@@ -5,7 +5,7 @@ const util = require('./lexer').util;
 
 @lexer lexer
 
-Main    -> Syn                                 {% id %}
+Main    -> _ Syn _                             {% util.select1 %}
 
 Id      -> %ident                              {% id %}
 
