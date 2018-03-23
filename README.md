@@ -18,7 +18,7 @@ Using the evaluator
 You can try the following code over at [RunKit](https://npm.runkit.com/@calculemus/abt-lambda):
 
 ```javascript
-var abtLambda = require("@calculemus/abt-lambda")
+const abtLambda = require("@calculemus/abt-lambda");
 
 // Parse, evaluate, and print as different steps
 const [fv, e] = abtLambda.parse("x (x => (x => x) y x)");
