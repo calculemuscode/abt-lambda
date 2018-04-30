@@ -5,20 +5,7 @@ export const lexer: Lexer = compile({
     ident: {
         match: /[a-zA-Z0-9_]+/,
         keywords: {
-            keyword: [
-                "nat",
-                "forall",
-                "exists",
-                "type",
-                "let",
-                "in",
-                "SIG",
-                "INPUTS",
-                "IMPL",
-                "MAIN",
-                "zero",
-                "succ"
-            ]
+            keyword: []
         }
     },
     symb: {
