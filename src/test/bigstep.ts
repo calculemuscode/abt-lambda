@@ -1,4 +1,4 @@
-import { parse, evaluate } from "../index";
+import { parseExp, evaluate } from "../index";
 import { expect, use } from "chai";
 import { abt } from "@calculemus/abt";
 import "mocha";
@@ -11,13 +11,13 @@ use((chai, utils) => {
     // The explicit this parameter is so that we can keep noImplicitAny checked.
     // Documented at https://github.com/Microsoft/TypeScript/issues/3694
     utils.addMethod(chai.Assertion.prototype, 'aequiv', function (this: any, s: string) {
-        const actual = this._obj instanceof Function ? this._obj() : this._obj;
-        const [fv1, actualNormalForm] = parse(actual);
-        const [fv2, expectedNormalForm] = parse(s);
+        const actualStr = this._obj instanceof Function ? this._obj() : this._obj;
+        const actual = parseExp(actualStr);
+        const expected = parseExp(s);
         this.assert(
-            fv1.equals(fv2) && abt.equal(fv1, actualNormalForm, expectedNormalForm),
-            `expected ${actual} and ${s} to be alpha equivalent`,
-            `expected ${actual} and ${s} to not be alpha equivalent`,
+            actual.fv.equals(expected.fv) && abt.equal(actual.fv, actual.exp, expected.exp),
+            `expected ${actualStr} and ${s} to be alpha equivalent`,
+            `expected ${actualStr} and ${s} to not be alpha equivalent`,
             s,
             actual
         );

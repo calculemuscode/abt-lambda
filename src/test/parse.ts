@@ -1,16 +1,18 @@
-import { parse, toString } from "../index";
+import { parse, parseExp, toString } from "../index";
 import { expect } from "chai";
 import "mocha";
 
 function expectParseToString(s: string) {
-    const e = parse(s)[1];
+    const e = parseExp(s).exp;
     return expect(toString(e), s);
 }
 
 describe("Parsing", () => {
     it("Should reject bad inputs", () => {
-        expect(() => parse("a =>")).to.throw();
-        expect(() => parse("=> a")).to.throw();
+        expect(parse("a =>").tag).to.equal("error");
+        expect(parse("=> a").tag).to.equal("error");
+        expect(() => parseExp("a =>")).to.throw();
+        expect(() => parseExp("=> a")).to.throw();
     });
 
     it("Accepts padding spaces", () => {
