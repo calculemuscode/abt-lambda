@@ -9,7 +9,7 @@ function expectParseToString(s: string) {
 
 describe("Parsing", () => {
     it("Should reject bad inputs", () => {
-        expect(parse("a =>").tag).to.equal("error");
+        expect(parse("a =>").tag).to.equal("incomplete");
         expect(parse("=> a").tag).to.equal("error");
         expect(() => parseExp("a =>")).to.throw();
         expect(() => parseExp("=> a")).to.throw();

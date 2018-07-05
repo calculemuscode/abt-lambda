@@ -37,7 +37,7 @@ export function parse(s: string): {tag: "incomplete"} | { tag: "assign", id: str
     if (decl["type"] === "assign") {
         const id = decl.value[0];
         const [fv, exp] = parseSyn(decl.value[2]);
-        return { tag: "assign", id: id, fv: fv, exp: exp };
+        return { tag: "assign", id: id.value, fv: fv, exp: exp };
     } else {
         const [fv, exp] = parseSyn(decl);
         return { tag: "value", fv: fv, exp: exp };
