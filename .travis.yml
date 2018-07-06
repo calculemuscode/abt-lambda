@@ -1,13 +1,17 @@
----
-
 language: node_js
-
-node_js:
- - 9
- - 8
- - 6
+node_js: node
 
 script:
- - npm run nearley
- - npm test
- - npm run coveralls
+- npm run nearley
+- npm test
+- npm run coveralls
+
+deploy:
+  - provider: npm
+    skip_cleanup: true
+    on:
+      tags: true
+      repo: calculemuscode/abt-lambda
+    email: rob@calculem.us
+    api_key:
+      secure: YIQzRDT7Kl7NUuijPmgzL0upkhtt6DIGEJVqNWLOx/nZgPthYKa28k6Ek5VNJEreM21wufAo6zd6ooQMz2Rg4+a4S4c2NPUusLZKhsJ/rfW1/WAPCVAVg8OXfuQU2Fk/Q1tjwqJQV0nUkgzPhYjAN4QDtBqftZenY5PPclhpsVNIfJzE7sHj1gUiJHvPCI48/tc3iAP6I+lOXkr6/JNsUhxZ7SMO6FdHuQFeQP0hk3Ek+DkO4SNwp0H5NT+G6zgnKGh/XCZ+17F42AsuQrRXG32bogaZ7/KCu11q0CBfVzTyszRIQ1+ZDW9UNiaf9r3i2rdbpZo45LZ+AOjSvynOxn/7b628c6LcqsS+TI0RoD4TkDXZUv9vM8dsTphaIEjnHtIskpU8+UZ2kV9XtuyGG84pFhtL3O46VWEfg7UPwXNzlFf/M2MXFYyw2FeRgepRPlufmK6n13nU3lSMpv3qjZjHIEhaqgc68QBg6eSItbT9Zo7DTNU7lOls+0N0NJ6WSzbRGzOUTL+ZY4ATUFG5NqvLBWNbROALdSXPO9iKlDjmVxt24agmvxQIejwCqKvGz4kkglNZj8U+ElsiUckuJ928G8yO8n1GOUMb7pIYc9OOLaNHdR6FZeuQ9I4kQwCVLGODOM5pEzdHnCokoXuOdwjkH8cNxuWQcsHYTuQwQR0=
